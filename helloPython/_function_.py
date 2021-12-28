@@ -25,6 +25,7 @@ printInfo2('张三')
 printInfo2('李四', 22)
 
 
+# 加了星号（*）的变量args会存放所有未命名的变量参数，args为元组；而加**的变量kwargs会存放命名参数，即形如key=value的参数， kwargs为字典
 def fun(a, b, *args, **kwargs):
     print 'a=', a
     print 'b=', b
@@ -34,7 +35,7 @@ def fun(a, b, *args, **kwargs):
         print key, '=', value
 
 
-fun(1, 2, 3, 4, 5, m=6, n=7, p=8)
+fun(1, 2, 3, 4, 5, m='ff', n=7, p=8)
 
 
 def fun2(a, b):
@@ -73,6 +74,8 @@ def test1():
 1、如果全局变量是可变类型：所以在函数里面任意修改（值，引用）
 2、如果全局变量是不可变类型：在函数里面不能修改值，也不能修改引用，除非加上global才能修改引用。
 """
+
+
 def test2():
     global a
     a += 100
@@ -81,3 +84,12 @@ def test2():
 
 test1()
 test2()
+
+
+# 递归函数
+def test1(n):
+    if n == 1:
+        return 1
+    return n * test1(n - 1)
+
+print test1(4)

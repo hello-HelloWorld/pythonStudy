@@ -40,7 +40,7 @@ print '100 + 200 =', 100 + 200
 # %f 浮点数
 # %s 字符串
 # %x 十六进制整数
-print ("hi,%s,you have %d" % ('python', 666))
+print ("hi,%s,you have %d" % ("python", 666))
 
 # 输入的都作为字符串
 # shuru = raw_input("键盘输入:")
